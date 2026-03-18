@@ -1,0 +1,1501 @@
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>株式会社ライトミル — 採用レポート</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',Arial,sans-serif;background:#F0F2F5;color:#1A2B4A}
+
+/* バナー */
+.edit-banner{background:#065F46;color:#fff;padding:10px 24px;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.edit-banner .tip{color:#A7F3D0;font-size:12px}
+.btn-excel{background:#22C55E;color:#fff;border:none;border-radius:6px;padding:7px 16px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+.btn-excel:hover{background:#16A34A}
+.btn-save{background:#2563EB;color:#fff;border:none;border-radius:6px;padding:7px 16px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+.btn-save:hover{background:#1D4ED8}
+.btn-group{display:flex;gap:8px;flex-shrink:0}
+
+/* ヘッダー */
+.page-header{background:linear-gradient(135deg,#0F1E36,#1A2B4A,#1E3A5F);color:#fff;padding:28px 40px;display:flex;justify-content:space-between;align-items:center}
+.header-brand{font-size:11px;letter-spacing:3px;color:#94A3B8;text-transform:uppercase;margin-bottom:8px}
+.header-client{font-size:28px;font-weight:700}
+.header-subtitle{font-size:13px;color:#CBD5E1;margin-top:4px}
+.header-period{background:rgba(255,255,255,.1);border-radius:8px;padding:10px 16px;font-size:12px;color:#CBD5E1;text-align:right}
+
+.content{max-width:1280px;margin:0 auto;padding:32px 24px}
+.section{background:#fff;border-radius:12px;margin-bottom:24px;box-shadow:0 1px 4px rgba(0,0,0,.08);overflow:hidden}
+.section-header{background:#1A2B4A;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:10px}
+.section-num{background:#fff;color:#1A2B4A;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.section-title{font-size:15px;font-weight:600}
+.section-note{font-size:11px;color:#94A3B8;margin-left:auto}
+.section-body{padding:20px}
+.period-badge{display:inline-block;background:#EFF6FF;color:#1E40AF;border:1px solid #BFDBFE;border-radius:6px;padding:5px 12px;font-size:12px;font-weight:600;margin-bottom:14px}
+.red-note{color:#DC2626;font-weight:600}
+
+/* KPIテーブル */
+.kpi-table{width:100%;border-collapse:collapse;font-size:13px}
+.kpi-table thead tr{background:#1A2B4A;color:#fff}
+.kpi-table thead th{padding:10px 12px;text-align:center;font-weight:600;font-size:12px}
+.kpi-table thead th:first-child{text-align:left}
+.kpi-table tbody tr:nth-child(even){background:#F8FAFC}
+.kpi-table tbody tr:hover{background:#EFF6FF}
+.kpi-table td{padding:9px 12px;border-bottom:1px solid #E5E7EB;text-align:center}
+.kpi-label{font-weight:500;color:#374151;text-align:left!important}
+.issue-label{color:#DC2626!important;font-weight:700}
+.kpi-final{color:#7C3AED;font-weight:600}
+.kpi-target{color:#2563EB;font-weight:600}
+.kpi-actual{font-weight:700;color:#111827}
+
+/* 自動計算セル（率） */
+.auto-cell{color:#059669;font-style:italic;position:relative}
+.auto-cell::after{content:'⟳';font-size:9px;color:#9CA3AF;position:absolute;top:2px;right:2px;font-style:normal}
+
+/* 編集可能セル */
+.editable{cursor:pointer;border-radius:4px;padding:2px 6px;display:inline-block;min-width:56px;text-align:center;transition:all .15s}
+.editable:hover{background:#FEF9C3;outline:2px dashed #F59E0B}
+.editable.is-editing{background:#EFF6FF;outline:2px solid #2563EB}
+
+/* 達成率 */
+.achieve-green{color:#059669;font-weight:700}
+.achieve-yellow{color:#D97706;font-weight:700}
+.achieve-red{color:#DC2626;font-weight:700}
+.achieve-neutral{color:#9CA3AF}
+
+/* データテーブル */
+.data-table{width:100%;border-collapse:collapse;font-size:13px}
+.data-table thead tr{background:#1A2B4A;color:#fff}
+.data-table thead th{padding:10px 12px;text-align:center;font-weight:600;font-size:12px}
+.data-table thead th:first-child{text-align:left}
+.data-table tbody tr:nth-child(even){background:#F8FAFC}
+.data-table tbody tr:hover{background:#EFF6FF}
+.data-table td{padding:9px 12px;border-bottom:1px solid #E5E7EB;text-align:center}
+.title-cell{text-align:left!important;font-weight:500}
+.calc-cell{color:#059669;font-style:italic}
+
+/* 広告サマリー */
+.ad-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.ad-card{border:1px solid #E5E7EB;border-radius:8px;padding:14px 16px;text-align:center}
+.ad-card-label{font-size:11px;color:#6B7280;margin-bottom:6px}
+.ad-card-value{font-size:22px;font-weight:700;color:#1A2B4A}
+
+/* ファネル */
+.funnel-container{display:flex;align-items:center;justify-content:center;padding:20px 10px;flex-wrap:wrap;gap:4px}
+.funnel-step{display:flex;flex-direction:column;align-items:center;min-width:100px}
+.funnel-bar{width:120px;height:50px;border-radius:4px}
+.funnel-val{font-size:22px;font-weight:700;color:#1A2B4A;margin-top:8px}
+.funnel-label{font-size:12px;color:#6B7280;margin-top:2px}
+.funnel-sub{font-size:11px;color:#9CA3AF;margin-top:2px}
+.funnel-arrow{font-size:20px;color:#9CA3AF;padding:0 4px;margin-top:-20px}
+
+/* 分析カード */
+.analysis-category{margin-bottom:10px}
+.analysis-category-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700}
+.category-quant{background:#EFF6FF;color:#1D4ED8;border-left:4px solid #3B82F6}
+.category-qual{background:#FFF7ED;color:#92400E;border-left:4px solid #F59E0B}
+.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.analysis-card{border:1px solid #E5E7EB;border-radius:10px;overflow:hidden;position:relative}
+.analysis-card-header{background:#F8FAFC;border-bottom:1px solid #E5E7EB;padding:12px 16px;display:flex;align-items:center;gap:8px}
+.analysis-icon{font-size:18px}
+.analysis-no{font-size:11px;color:#6B7280;font-weight:600}
+.analysis-title{font-size:13px;font-weight:700;color:#1A2B4A;flex:1}
+.delete-card-btn{margin-left:auto;background:none;border:none;cursor:pointer;color:#9CA3AF;font-size:15px;padding:2px 5px;border-radius:4px;line-height:1;flex-shrink:0}
+.delete-card-btn:hover{background:#FEE2E2;color:#EF4444}
+.cat-toggle-btn{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid currentColor;cursor:pointer;background:none;font-weight:700;flex-shrink:0}
+.cat-toggle-btn.quant{color:#1D4ED8;border-color:#93C5FD}
+.cat-toggle-btn.qual{color:#92400E;border-color:#FCD34D}
+.add-card-btn{display:block;width:100%;margin-top:10px;padding:8px;border:2px dashed #D1D5DB;border-radius:8px;background:none;cursor:pointer;color:#6B7280;font-size:13px;font-weight:600;text-align:center;transition:all .15s}
+.add-card-btn:hover{border-color:#3B82F6;color:#1D4ED8;background:#EFF6FF}
+[contenteditable]{outline:none;cursor:text}
+[contenteditable]:hover{background:rgba(245,158,11,0.07);border-radius:3px}
+[contenteditable]:focus{background:#FFFDE7;border-radius:3px;outline:1px dashed #F59E0B}
+.analysis-body{padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+
+.analysis-issue{background:#FFF5F5;border-left:3px solid #EF4444;padding:10px 12px;border-radius:0 6px 6px 0}
+.analysis-action{background:#F0FDF4;border-left:3px solid #10B981;padding:10px 12px;border-radius:0 6px 6px 0}
+.badge{font-size:11px;font-weight:700;display:flex;align-items:center;gap:4px;margin-bottom:6px}
+.badge-issue{color:#DC2626}
+.badge-action{color:#059669}
+
+/* テキスト編集エリア */
+.text-editable{font-size:12px;line-height:1.7;color:#374151;border:none;background:transparent;width:100%;resize:none;font-family:inherit;cursor:text;padding:0;outline:none;min-height:40px}
+.text-editable:focus{background:#FFFDE7;border-radius:4px;padding:4px;outline:1px dashed #F59E0B}
+.edit-hint{font-size:10px;color:#9CA3AF;margin-top:4px;display:flex;align-items:center;gap:3px}
+
+/* ステータス */
+.status-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.status-panel{border:1px solid #E5E7EB;border-radius:8px;overflow:hidden}
+.status-panel-title{background:#F8FAFC;border-bottom:1px solid #E5E7EB;padding:10px 14px;font-size:13px;font-weight:700;color:#1A2B4A}
+.status-row{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid #F3F4F6;font-size:13px}
+.status-row:last-child{border-bottom:none}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<div class="edit-banner">
+  <span>✏️ <strong>編集モード</strong> — 数字・文字をクリックして直接編集できます</span>
+  <span class="tip">💡 率（%）を編集すると対応する件数が自動計算されます</span>
+  <div class="btn-group">
+    <button class="btn-save" onclick="saveAsHtml()">💾 保存・共有用HTML</button>
+    <button class="btn-excel" onclick="exportToExcel()">📥 Excelで保存</button>
+  </div>
+</div>
+
+<div class="page-header">
+  <div>
+    <div class="header-brand" contenteditable="true">CAREER ACTION RPO REPORT</div>
+    <div class="header-client" contenteditable="true">株式会社ライトミル 様</div>
+    <div class="header-subtitle" contenteditable="true">採用支援レポート — 最終更新 2026年3月18日</div>
+  </div>
+  <div class="header-period" contenteditable="true">対象期間：2026/03/01 〜 2026/03/18</div>
+</div>
+
+<div class="content">
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">1</span>
+      <span class="section-title" contenteditable="true">週次KPI — 今期目標 vs 現状</span>
+      <span class="section-note red-note">● 赤字＝課題該当指標</span>
+    </div>
+    <div class="section-body">
+      <div class="period-badge" contenteditable="true">📅 2026/03/01 〜 2026/03/18</div>
+      <table class="kpi-table"><thead><tr>
+        <th style="text-align:left;width:220px" contenteditable="true">指標</th>
+        <th contenteditable="true">今期目標</th><th contenteditable="true">現状</th><th contenteditable="true">達成率</th>
+      </tr></thead><tbody id="weekly-tbody"><tr><td class="kpi-label" contenteditable="true">採用数</td><td class="kpi-target"><span class="editable">1</span></td><td class="kpi-actual"><span class="editable">0</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">採用率</td><td class="kpi-target auto-cell"><span class="editable">50.0%</span></td><td class="kpi-actual auto-cell"><span class="editable">0.0%</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">面接数</td><td class="kpi-target"><span class="editable">2</span></td><td class="kpi-actual"><span class="editable">0</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">面接率</td><td class="kpi-target auto-cell"><span class="editable">50.0%</span></td><td class="kpi-actual auto-cell"><span class="editable">0.0%</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">有効応募数</td><td class="kpi-target"><span class="editable">4</span></td><td class="kpi-actual"><span class="editable">0</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label issue-label" contenteditable="true">有効率</td><td class="kpi-target auto-cell"><span class="editable">13.3%</span></td><td class="kpi-actual auto-cell"><span class="editable">0.0%</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">応募数</td><td class="kpi-target"><span class="editable">30</span></td><td class="kpi-actual"><span class="editable">30</span></td><td class="achieve-green">100%</td></tr><tr><td class="kpi-label" contenteditable="true">応募率</td><td class="kpi-target auto-cell"><span class="editable">9.1%</span></td><td class="kpi-actual auto-cell"><span class="editable">11.3%</span></td><td class="achieve-green">123%</td></tr><tr><td class="kpi-label" contenteditable="true">クリック数</td><td class="kpi-target"><span class="editable">328</span></td><td class="kpi-actual"><span class="editable">266</span></td><td class="achieve-yellow">81%</td></tr><tr><td class="kpi-label issue-label" contenteditable="true">クリック率（CTR）</td><td class="kpi-target auto-cell"><span class="editable">8.0%</span></td><td class="kpi-actual auto-cell"><span class="editable">10.8%</span></td><td class="achieve-green">135%</td></tr><tr><td class="kpi-label issue-label" contenteditable="true">表示回数</td><td class="kpi-target"><span class="editable">4,100</span></td><td class="kpi-actual"><span class="editable">2,460</span></td><td class="achieve-red">60%</td></tr><tr><td class="kpi-label" contenteditable="true">1求人あたり表示</td><td class="kpi-target auto-cell"><span class="editable">342</span></td><td class="kpi-actual auto-cell"><span class="editable">205</span></td><td class="achieve-red">60%</td></tr><tr><td class="kpi-label" contenteditable="true">求人数</td><td class="kpi-target"><span class="editable">12</span></td><td class="kpi-actual"><span class="editable">12</span></td><td class="achieve-green">100%</td></tr><tr><td class="kpi-label" contenteditable="true">1求人あたり広告費</td><td class="kpi-target auto-cell"><span class="editable">¥4,098</span></td><td class="kpi-actual auto-cell"><span class="editable">¥307</span></td><td class="achieve-red">8%</td></tr><tr><td class="kpi-label" contenteditable="true">有料広告費</td><td class="kpi-target"><span class="editable">¥49,180</span></td><td class="kpi-actual"><span class="editable">¥3,689</span></td><td class="achieve-red">8%</td></tr></tbody></table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">2</span>
+      <span class="section-title" contenteditable="true">3ヶ月最終目標 — 目標 vs 現状</span>
+      <span class="section-note">📅 2026/03/01 〜 2026/05/03</span>
+    </div>
+    <div class="section-body">
+      <div class="period-badge" contenteditable="true">📅 3/3〜5/3（全61日）の採用目標：採用2名</div>
+      <table class="kpi-table"><thead><tr>
+        <th style="text-align:left;width:220px" contenteditable="true">指標</th>
+        <th contenteditable="true">最終目標</th><th contenteditable="true">現状</th><th contenteditable="true">達成率</th>
+      </tr></thead><tbody id="final-tbody"><tr><td class="kpi-label" contenteditable="true">採用数</td><td class="kpi-final"><span class="editable">2</span></td><td class="kpi-actual"><span class="editable">0</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">採用率</td><td class="kpi-final auto-cell"><span class="editable">28.6%</span></td><td class="kpi-actual auto-cell"><span class="editable">0.0%</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">面接数</td><td class="kpi-final"><span class="editable">7</span></td><td class="kpi-actual"><span class="editable">0</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">面接率</td><td class="kpi-final auto-cell"><span class="editable">38.9%</span></td><td class="kpi-actual auto-cell"><span class="editable">0.0%</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">有効応募数</td><td class="kpi-final"><span class="editable">18</span></td><td class="kpi-actual"><span class="editable">0</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label issue-label" contenteditable="true">有効率</td><td class="kpi-final auto-cell"><span class="editable">15.0%</span></td><td class="kpi-actual auto-cell"><span class="editable">0.0%</span></td><td class="achieve-red">0%</td></tr><tr><td class="kpi-label" contenteditable="true">応募数</td><td class="kpi-final"><span class="editable">120</span></td><td class="kpi-actual"><span class="editable">30</span></td><td class="achieve-red">25%</td></tr><tr><td class="kpi-label" contenteditable="true">応募率</td><td class="kpi-final auto-cell"><span class="editable">9.0%</span></td><td class="kpi-actual auto-cell"><span class="editable">11.3%</span></td><td class="achieve-green">125%</td></tr><tr><td class="kpi-label" contenteditable="true">クリック数</td><td class="kpi-final"><span class="editable">1,334</span></td><td class="kpi-actual"><span class="editable">266</span></td><td class="achieve-red">20%</td></tr><tr><td class="kpi-label issue-label" contenteditable="true">クリック率（CTR）</td><td class="kpi-final auto-cell"><span class="editable">8.0%</span></td><td class="kpi-actual auto-cell"><span class="editable">10.8%</span></td><td class="achieve-green">135%</td></tr><tr><td class="kpi-label issue-label" contenteditable="true">表示回数</td><td class="kpi-final"><span class="editable">16,675</span></td><td class="kpi-actual"><span class="editable">2,460</span></td><td class="achieve-red">15%</td></tr><tr><td class="kpi-label" contenteditable="true">1求人あたり表示</td><td class="kpi-final auto-cell"><span class="editable">1,390</span></td><td class="kpi-actual auto-cell"><span class="editable">205</span></td><td class="achieve-red">15%</td></tr><tr><td class="kpi-label" contenteditable="true">求人数</td><td class="kpi-final"><span class="editable">12</span></td><td class="kpi-actual"><span class="editable">12</span></td><td class="achieve-green">100%</td></tr><tr><td class="kpi-label" contenteditable="true">1求人あたり広告費</td><td class="kpi-final auto-cell"><span class="editable">¥16,667</span></td><td class="kpi-actual auto-cell"><span class="editable">¥307</span></td><td class="achieve-red">2%</td></tr><tr><td class="kpi-label" contenteditable="true">有料広告費</td><td class="kpi-final"><span class="editable">¥200,000</span></td><td class="kpi-actual"><span class="editable">¥3,689</span></td><td class="achieve-red">2%</td></tr></tbody></table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">3</span>
+      <span class="section-title" contenteditable="true">分析 — 課題と打ち手</span>
+      <span class="section-note">✏️ テキストをクリックして直接編集できます</span>
+    </div>
+    <div class="section-body">
+      <div class="analysis-grid" id="analysis-grid"><div class="analysis-category">
+    <div class="analysis-category-header category-quant" contenteditable="true">📊 定量課題</div>
+    <div class="analysis-grid" id="quant-grid">
+    <div class="analysis-card" data-uid="1">
+      <div class="analysis-card-header">
+        <span class="analysis-icon" contenteditable="true" data-uid="1" data-field="icon">👁</span>
+        <span class="analysis-title" contenteditable="true" data-uid="1" data-field="title">表示回数</span>
+        <button class="cat-toggle-btn quant" onclick="toggleCategory(1)" title="カテゴリを切替">定性へ</button>
+        <button class="delete-card-btn" onclick="deleteCard(1)" title="この項目を削除">✕</button>
+      </div>
+      <div class="analysis-body">
+        <div class="analysis-issue">
+          <div class="badge badge-issue">📍 課題</div>
+          <textarea class="text-editable" rows="3" data-uid="1" data-field="issue" style="height: 122px;">期間中の表示回数は2,460回（Airワーク1,784回・Indeed676回）。【正社員】イベント会場でのPR・案内コン、【正社員】物流業界の採用コンサルタント（等は応募0件となっており、検索露出の改善が必要な状況です。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+        <div class="analysis-action">
+          <div class="badge badge-action">💡 打ち手</div>
+          <textarea class="text-editable" rows="3" data-uid="1" data-field="action" style="height: 143px;">応募0の求人（【正社員】イベント会場でのPR・案内コン、【正社員】物流業界の採用コンサルタント（等）について、タイトルへの「未経験歓迎」「リモート可」等のキーワード追加と、掲載先媒体の見直しを優先的に実施することを推奨します。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="analysis-card" data-uid="2">
+      <div class="analysis-card-header">
+        <span class="analysis-icon" contenteditable="true" data-uid="2" data-field="icon">📝</span>
+        <span class="analysis-title" contenteditable="true" data-uid="2" data-field="title">応募率</span>
+        <button class="cat-toggle-btn quant" onclick="toggleCategory(2)" title="カテゴリを切替">定性へ</button>
+        <button class="delete-card-btn" onclick="deleteCard(2)" title="この項目を削除">✕</button>
+      </div>
+      <div class="analysis-body">
+        <div class="analysis-issue">
+          <div class="badge badge-issue">📍 課題</div>
+          <textarea class="text-editable" rows="3" data-uid="2" data-field="issue" style="height: 82px;">全体応募率は11.3%（応募30件/クリック266件）。「一般事務・経理・人事サポート」が12件と最多ですが、4求人で応募0件が続いています。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+        <div class="analysis-action">
+          <div class="badge badge-action">💡 打ち手</div>
+          <textarea class="text-editable" rows="3" data-uid="2" data-field="action" style="height: 102px;">応募0が続く4求人を優先的に改善します。求人詳細ページの入力項目削減・仕事内容の具体化・応募ハードルを下げる訴求文に見直すことを推奨します。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <button class="add-card-btn" onclick="addCard('定量')">＋ 定量項目を追加</button>
+  </div><div class="analysis-category" style="margin-top:20px">
+    <div class="analysis-category-header category-qual" contenteditable="true">💬 定性課題</div>
+    <div class="analysis-grid" id="qual-grid">
+    <div class="analysis-card" data-uid="3">
+      <div class="analysis-card-header">
+        <span class="analysis-icon" contenteditable="true" data-uid="3" data-field="icon">✅</span>
+        <span class="analysis-title" contenteditable="true" data-uid="3" data-field="title">有効応募率</span>
+        <button class="cat-toggle-btn qual" onclick="toggleCategory(3)" title="カテゴリを切替">定量へ</button>
+        <button class="delete-card-btn" onclick="deleteCard(3)" title="この項目を削除">✕</button>
+      </div>
+      <div class="analysis-body">
+        <div class="analysis-issue">
+          <div class="badge badge-issue">📍 課題</div>
+          <textarea class="text-editable" rows="3" data-uid="3" data-field="issue" style="height: 102px;">今期の応募30件のうち、有効応募数はATS・選考データから別途確認が必要です（このレポートで入力してください）。媒体別ではAirワーク13件・Indeed17件の内訳です。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+        <div class="analysis-action">
+          <div class="badge badge-action">💡 打ち手</div>
+          <textarea class="text-editable" rows="3" data-uid="3" data-field="action" style="height: 122px;">有効応募率の向上には、Indeed求人へのスクリーニング質問の追加と、必須条件の明記が有効です。また応募フォームに簡易アンケートを設置し、応募動機の質を事前確認することも推奨します。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="analysis-card" data-uid="4">
+      <div class="analysis-card-header">
+        <span class="analysis-icon" contenteditable="true" data-uid="4" data-field="icon">📋</span>
+        <span class="analysis-title" contenteditable="true" data-uid="4" data-field="title">求人票品質</span>
+        <button class="cat-toggle-btn qual" onclick="toggleCategory(4)" title="カテゴリを切替">定量へ</button>
+        <button class="delete-card-btn" onclick="deleteCard(4)" title="この項目を削除">✕</button>
+      </div>
+      <div class="analysis-body">
+        <div class="analysis-issue">
+          <div class="badge badge-issue">📍 課題</div>
+          <textarea class="text-editable" rows="3" data-uid="4" data-field="issue" style="height: 102px;">媒体別応募はAirワーク13件・Indeed17件。応募0の求人が4件あり、求人票の内容（仕事内容・訴求文・画像）が十分に整備されていない可能性があります。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+        <div class="analysis-action">
+          <div class="badge badge-action">💡 打ち手</div>
+          <textarea class="text-editable" rows="3" data-uid="4" data-field="action" style="height: 102px;">応募0求人を対象に、①給与・勤務地・待遇の具体的な数字記載、②仕事の「やりがい」「チームの雰囲気」を盛り込んだ訴求文への改訂、③写真・動画の追加を優先的に実施します。</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <button class="add-card-btn" onclick="addCard('定性')">＋ 定性項目を追加</button>
+  </div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">4</span>
+      <span class="section-title" contenteditable="true">求人別パフォーマンス（累計）</span>
+    </div>
+    <div class="section-body">
+      <table class="data-table"><thead><tr>
+        <th style="text-align:left" contenteditable="true">求人タイトル</th>
+        <th contenteditable="true">表示回数</th><th contenteditable="true">クリック数</th><th contenteditable="true">CTR</th>
+        <th contenteditable="true">応募数</th><th contenteditable="true">応募率</th><th contenteditable="true">有効応募</th><th contenteditable="true">面接</th><th contenteditable="true">採用</th>
+      </tr></thead><tbody id="jobs-tbody"><tr><td class="title-cell" contenteditable="true">【正社員】WEBマーケティング/1人目マーケ募集！予算数百万円を自社運用／戦略から携わる</td><td><span class="editable">112</span></td><td><span class="editable">32</span></td><td class="calc-cell auto-cell">28.6%</td><td><span class="editable">1</span></td><td class="calc-cell auto-cell">3.1%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">【正社員】イベント会場でのPR・案内コンシェルジュ/入社3ヶ月で月80万可！呼び込み不要のイベントPRスタッフ</td><td><span class="editable">301</span></td><td><span class="editable">27</span></td><td class="calc-cell auto-cell">9.0%</td><td><span class="editable">0</span></td><td class="calc-cell auto-cell">0.0%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">【正社員】キャリアコンサルタント/未経験から採用コンサルタントへ！年休125日！</td><td><span class="editable">859</span></td><td><span class="editable">93</span></td><td class="calc-cell auto-cell">10.8%</td><td><span class="editable">8</span></td><td class="calc-cell auto-cell">8.6%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">【正社員】太陽光コンシェルジュ/アポ不要！インセンティブ還元あり！高月収も狙える</td><td><span class="editable">189</span></td><td><span class="editable">16</span></td><td class="calc-cell auto-cell">8.5%</td><td><span class="editable">1</span></td><td class="calc-cell auto-cell">6.3%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">【正社員】成長企業のバックオフィス事務/残業ほぼなし！月給25万〜40万／急成長企業のバックオフィス</td><td><span class="editable">266</span></td><td><span class="editable">34</span></td><td class="calc-cell auto-cell">12.8%</td><td><span class="editable">3</span></td><td class="calc-cell auto-cell">8.8%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">【正社員】物流業界の採用コンサルタント（未経験歓迎）/月給35万〜×年休125日！未経験から採用のプロへ。</td><td><span class="editable">57</span></td><td><span class="editable">1</span></td><td class="calc-cell auto-cell">1.8%</td><td><span class="editable">0</span></td><td class="calc-cell auto-cell">0.0%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">イベント会場でのPR・案内</td><td><span class="editable">101</span></td><td><span class="editable">4</span></td><td class="calc-cell auto-cell">4.0%</td><td><span class="editable">0</span></td><td class="calc-cell auto-cell">0.0%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">エネルギーソリューション・ディレクター</td><td><span class="editable">18</span></td><td><span class="editable">4</span></td><td class="calc-cell auto-cell">22.2%</td><td><span class="editable">0</span></td><td class="calc-cell auto-cell">0.0%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">マーケター</td><td><span class="editable">63</span></td><td><span class="editable">6</span></td><td class="calc-cell auto-cell">9.5%</td><td><span class="editable">2</span></td><td class="calc-cell auto-cell">33.3%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">一般事務・経理・人事サポート</td><td><span class="editable">347</span></td><td><span class="editable">37</span></td><td class="calc-cell auto-cell">10.7%</td><td><span class="editable">12</span></td><td class="calc-cell auto-cell">32.4%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">人材コーディネーター</td><td><span class="editable">23</span></td><td><span class="editable">2</span></td><td class="calc-cell auto-cell">8.7%</td><td><span class="editable">1</span></td><td class="calc-cell auto-cell">50.0%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr><tr><td class="title-cell" contenteditable="true">採用コンサルタント</td><td><span class="editable">124</span></td><td><span class="editable">10</span></td><td class="calc-cell auto-cell">8.1%</td><td><span class="editable">2</span></td><td class="calc-cell auto-cell">20.0%</td><td><span class="editable">0</span></td><td><span class="editable">0</span></td><td><span class="editable">0</span></td></tr></tbody></table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">5</span>
+      <span class="section-title" contenteditable="true">有料広告 費用対効果</span>
+    </div>
+    <div class="section-body">
+      <div class="ad-summary" id="ad-summary">
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">総広告費</div><div class="ad-card-value">¥3,689</div></div>
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">クリック単価</div><div class="ad-card-value">¥14</div></div>
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">応募単価</div><div class="ad-card-value">¥123</div></div>
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">採用単価</div><div class="ad-card-value">¥0</div></div>
+  </div>
+      <table class="data-table"><thead><tr>
+        <th style="text-align:left" contenteditable="true">広告プラン</th>
+        <th contenteditable="true">費用</th><th contenteditable="true">クリック</th><th contenteditable="true">CPC</th>
+        <th contenteditable="true">応募</th><th contenteditable="true">CPA</th><th contenteditable="true">採用</th><th contenteditable="true">採用CPA</th>
+      </tr></thead><tbody id="ads-tbody"><tr><td class="title-cell" contenteditable="true">Airワーク</td><td><span class="editable">¥1,553</span></td><td><span class="editable">203</span></td><td class="calc-cell auto-cell">¥8</td><td><span class="editable">13</span></td><td class="calc-cell auto-cell">¥119</td><td><span class="editable">0</span></td><td class="calc-cell auto-cell">¥0</td></tr><tr><td class="title-cell" contenteditable="true">Indeed</td><td><span class="editable">¥2,136</span></td><td><span class="editable">63</span></td><td class="calc-cell auto-cell">¥34</td><td><span class="editable">17</span></td><td class="calc-cell auto-cell">¥126</td><td><span class="editable">0</span></td><td class="calc-cell auto-cell">¥0</td></tr></tbody></table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">6</span>
+      <span class="section-title" contenteditable="true">採用ファネル</span>
+    </div>
+    <div class="section-body">
+      <div class="funnel-container" id="funnel-container">
+    <div class="funnel-step">
+      <div class="funnel-bar" style="background:#1A2B4A"></div>
+      <div class="funnel-val">2,460</div>
+      <div class="funnel-label" contenteditable="true">表示回数</div>
+      
+    </div>
+    <span class="funnel-arrow" contenteditable="true">→</span>
+  
+    <div class="funnel-step">
+      <div class="funnel-bar" style="background:#1E3A5F"></div>
+      <div class="funnel-val">266</div>
+      <div class="funnel-label" contenteditable="true">クリック</div>
+      <div class="funnel-sub" contenteditable="true">CTR 10.8%</div>
+    </div>
+    <span class="funnel-arrow" contenteditable="true">→</span>
+  
+    <div class="funnel-step">
+      <div class="funnel-bar" style="background:#2E5FA3"></div>
+      <div class="funnel-val">30</div>
+      <div class="funnel-label" contenteditable="true">応募</div>
+      <div class="funnel-sub" contenteditable="true">応募率 11.3%</div>
+    </div>
+    <span class="funnel-arrow" contenteditable="true">→</span>
+  
+    <div class="funnel-step">
+      <div class="funnel-bar" style="background:#6B8DC4"></div>
+      <div class="funnel-val">0</div>
+      <div class="funnel-label" contenteditable="true">有効応募</div>
+      
+    </div>
+    <span class="funnel-arrow" contenteditable="true">→</span>
+  
+    <div class="funnel-step">
+      <div class="funnel-bar" style="background:#9DB5D8"></div>
+      <div class="funnel-val">0</div>
+      <div class="funnel-label" contenteditable="true">面接</div>
+      
+    </div>
+    <span class="funnel-arrow" contenteditable="true">→</span>
+  
+    <div class="funnel-step">
+      <div class="funnel-bar" style="background:#C0392B"></div>
+      <div class="funnel-val">0</div>
+      <div class="funnel-label" contenteditable="true">採用</div>
+      
+    </div>
+    
+  </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">7</span>
+      <span class="section-title" contenteditable="true">週次推移</span>
+    </div>
+    <div class="section-body">
+      <div id="weekly-history"><table class="data-table"><thead><tr><th contenteditable="true">期間</th><th contenteditable="true">表示回数</th><th contenteditable="true">クリック</th><th contenteditable="true">CTR</th><th contenteditable="true">応募数</th><th contenteditable="true">応募率</th><th contenteditable="true">有効応募</th><th contenteditable="true">面接</th><th contenteditable="true">採用</th><th contenteditable="true">広告費</th></tr></thead><tbody><tr>
+      <td class="title-cell" contenteditable="true">2026/03/01〜2026/03/18</td>
+      <td>2,460</td>
+      <td>266</td>
+      <td>10.8%</td>
+      <td>30</td>
+      <td>11.3%</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>¥3,689</td>
+    </tr><tr style="font-weight:700;background:#F0F4FF">
+    <td>累計</td>
+    <td>2,460</td>
+    <td>266</td>
+    <td>10.8%</td>
+    <td>30</td>
+    <td>11.3%</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>¥3,689</td>
+  </tr></tbody></table></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// 初期データ
+// ============================================================
+// <<<RPO_DATA_START>>>
+const D = {
+  "client_name": "株式会社ライトミル",
+  "report_title": "採用支援レポート",
+  "period_start": "2026/03/01",
+  "period_end": "2026/03/18",
+  "week_start": "2026/03/01",
+  "week_end": "2026/03/18",
+  "contract_end": "2026-05-03",
+  "updated": "2026年3月18日",
+  "weekly": {
+    "hire_count": {
+      "final": 2,
+      "target": 1,
+      "actual": 0
+    },
+    "hire_rate": {
+      "final": 0.3,
+      "target": 0.3,
+      "actual": 0
+    },
+    "interview_count": {
+      "final": 7,
+      "target": 2,
+      "actual": 0
+    },
+    "interview_rate": {
+      "final": 0.4,
+      "target": 0.4,
+      "actual": 0
+    },
+    "qualified_count": {
+      "final": 18,
+      "target": 4,
+      "actual": 0
+    },
+    "qualified_rate": {
+      "final": 0.15,
+      "target": 0.15,
+      "actual": 0
+    },
+    "apply_count": {
+      "final": 120,
+      "target": 30,
+      "actual": 30
+    },
+    "apply_rate": {
+      "final": 0.09,
+      "target": 0.09,
+      "actual": 0.11278195488721804
+    },
+    "click_count": {
+      "final": 1334,
+      "target": 328,
+      "actual": 266
+    },
+    "ctr": {
+      "final": 0.08,
+      "target": 0.08,
+      "actual": 0.108130081300813
+    },
+    "impression_count": {
+      "final": 16675,
+      "target": 4100,
+      "actual": 2460
+    },
+    "impression_per_job": {
+      "final": 1390,
+      "target": 342,
+      "actual": 205
+    },
+    "job_count": {
+      "final": 12,
+      "target": 12,
+      "actual": 12
+    },
+    "cost_per_job": {
+      "final": 16667,
+      "target": 4098,
+      "actual": 307.4166666666667
+    },
+    "ad_spend": {
+      "final": 200000,
+      "target": 49180,
+      "actual": 3689
+    }
+  },
+  "cumulative": {
+    "hire_count": {
+      "final": 2,
+      "target": 1,
+      "actual": 0
+    },
+    "hire_rate": {
+      "final": 0.3,
+      "target": 0.3,
+      "actual": 0
+    },
+    "interview_count": {
+      "final": 7,
+      "target": 2,
+      "actual": 0
+    },
+    "interview_rate": {
+      "final": 0.4,
+      "target": 0.4,
+      "actual": 0
+    },
+    "qualified_count": {
+      "final": 18,
+      "target": 4,
+      "actual": 0
+    },
+    "qualified_rate": {
+      "final": 0.15,
+      "target": 0.15,
+      "actual": 0
+    },
+    "apply_count": {
+      "final": 120,
+      "target": 30,
+      "actual": 30
+    },
+    "apply_rate": {
+      "final": 0.09,
+      "target": 0.09,
+      "actual": 0.11278195488721804
+    },
+    "click_count": {
+      "final": 1334,
+      "target": 328,
+      "actual": 266
+    },
+    "ctr": {
+      "final": 0.08,
+      "target": 0.08,
+      "actual": 0.108130081300813
+    },
+    "impression_count": {
+      "final": 16675,
+      "target": 4100,
+      "actual": 2460
+    },
+    "impression_per_job": {
+      "final": 1390,
+      "target": 342,
+      "actual": 205
+    },
+    "job_count": {
+      "final": 12,
+      "target": 12,
+      "actual": 12
+    },
+    "cost_per_job": {
+      "final": 16667,
+      "target": 4098,
+      "actual": 307.4166666666667
+    },
+    "ad_spend": {
+      "final": 200000,
+      "target": 49180,
+      "actual": 3689
+    }
+  },
+  "jobs": [
+    {
+      "title": "【正社員】WEBマーケティング/1人目マーケ募集！予算数百万円を自社運用／戦略から携わる",
+      "media": "Airワーク",
+      "impressions": 112,
+      "clicks": 32,
+      "applications": 1,
+      "cost": 224,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "【正社員】イベント会場でのPR・案内コンシェルジュ/入社3ヶ月で月80万可！呼び込み不要のイベントPRスタッフ",
+      "media": "Airワーク",
+      "impressions": 301,
+      "clicks": 27,
+      "applications": 0,
+      "cost": 229,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "【正社員】キャリアコンサルタント/未経験から採用コンサルタントへ！年休125日！",
+      "media": "Airワーク",
+      "impressions": 859,
+      "clicks": 93,
+      "applications": 8,
+      "cost": 765,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "【正社員】太陽光コンシェルジュ/アポ不要！インセンティブ還元あり！高月収も狙える",
+      "media": "Airワーク",
+      "impressions": 189,
+      "clicks": 16,
+      "applications": 1,
+      "cost": 134,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "【正社員】成長企業のバックオフィス事務/残業ほぼなし！月給25万〜40万／急成長企業のバックオフィス",
+      "media": "Airワーク",
+      "impressions": 266,
+      "clicks": 34,
+      "applications": 3,
+      "cost": 171,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "【正社員】物流業界の採用コンサルタント（未経験歓迎）/月給35万〜×年休125日！未経験から採用のプロへ。",
+      "media": "Airワーク",
+      "impressions": 57,
+      "clicks": 1,
+      "applications": 0,
+      "cost": 30,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "イベント会場でのPR・案内",
+      "media": "Indeed",
+      "impressions": 101,
+      "clicks": 4,
+      "applications": 0,
+      "cost": 46,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "エネルギーソリューション・ディレクター",
+      "media": "Indeed",
+      "impressions": 18,
+      "clicks": 4,
+      "applications": 0,
+      "cost": 21,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "マーケター",
+      "media": "Indeed",
+      "impressions": 63,
+      "clicks": 6,
+      "applications": 2,
+      "cost": 171,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "一般事務・経理・人事サポート",
+      "media": "Indeed",
+      "impressions": 347,
+      "clicks": 37,
+      "applications": 12,
+      "cost": 626,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "人材コーディネーター",
+      "media": "Indeed",
+      "impressions": 23,
+      "clicks": 2,
+      "applications": 1,
+      "cost": 342,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    },
+    {
+      "title": "採用コンサルタント",
+      "media": "Indeed",
+      "impressions": 124,
+      "clicks": 10,
+      "applications": 2,
+      "cost": 930,
+      "qualified": 0,
+      "interviews": 0,
+      "hires": 0
+    }
+  ],
+  "ads": [
+    {
+      "plan": "Airワーク",
+      "cost": 1553,
+      "clicks": 203,
+      "applications": 13,
+      "hires": 0
+    },
+    {
+      "plan": "Indeed",
+      "cost": 2136,
+      "clicks": 63,
+      "applications": 17,
+      "hires": 0
+    }
+  ],
+  "history": [
+    {
+      "week_start": "2026/03/01",
+      "week_end": "2026/03/18",
+      "impression_count": 2460,
+      "click_count": 266,
+      "apply_count": 30,
+      "qualified_count": 0,
+      "interview_count": 0,
+      "hire_count": 0,
+      "ad_spend": 3689
+    }
+  ],
+  "statuses": [],
+  "media": []
+};
+// <<<RPO_DATA_END>>>
+
+// ============================================================
+// フォーマット
+// ============================================================
+const fmt = {
+  int:  v => (v==null||isNaN(v)) ? '—' : (v > 0 && v < 1 ? v.toFixed(1) : Math.round(v).toLocaleString('ja-JP')),
+  pct:  v => (v==null||isNaN(v)) ? '—' : ((v<1?v*100:v).toFixed(1)+'%'),
+  yen:  v => (v==null||isNaN(v)) ? '—' : ('¥'+Math.round(v).toLocaleString('ja-JP')),
+};
+
+function achieveClass(actual, target) {
+  if(!target) return 'achieve-neutral';
+  const r = actual/target;
+  return r>=1 ? 'achieve-green' : r>=0.8 ? 'achieve-yellow' : 'achieve-red';
+}
+function achieveStr(actual, target) {
+  if(!target) return '—';
+  return (actual/target*100).toFixed(0)+'%';
+}
+
+// ============================================================
+// KPI定義（率かどうか・逆算ロジック付き）
+// ============================================================
+// typeが'rate'のものは自動計算（緑表示）＋逆算対応
+const KPI = [
+  { key:'hire_count',         label:'採用数',           type:'count', fmt:'int',  issue:false },
+  { key:'hire_rate',          label:'採用率',           type:'rate',  fmt:'pct',  issue:false,
+     calc: s => s.interview_count>0 ? s.hire_count/s.interview_count : 0,
+     backCalc: (val,s,side) => { s.hire_count = Math.round((val>1?val/100:val)*s.interview_count); } },
+  { key:'interview_count',    label:'面接数',           type:'count', fmt:'int',  issue:false },
+  { key:'interview_rate',     label:'面接率',           type:'rate',  fmt:'pct',  issue:false,
+     calc: s => s.qualified_count>0 ? s.interview_count/s.qualified_count : 0,
+     backCalc: (val,s,side) => { s.interview_count = Math.round((val>1?val/100:val)*s.qualified_count); } },
+  { key:'qualified_count',    label:'有効応募数',       type:'count', fmt:'int',  issue:false },
+  { key:'qualified_rate',     label:'有効率',           type:'rate',  fmt:'pct',  issue:true,
+     calc: s => s.apply_count>0 ? s.qualified_count/s.apply_count : 0,
+     backCalc: (val,s,side) => { s.qualified_count = Math.round((val>1?val/100:val)*s.apply_count); } },
+  { key:'apply_count',        label:'応募数',           type:'count', fmt:'int',  issue:false },
+  { key:'apply_rate',         label:'応募率',           type:'rate',  fmt:'pct',  issue:false,
+     calc: s => s.click_count>0 ? s.apply_count/s.click_count : 0,
+     backCalc: (val,s,side) => { s.apply_count = Math.round((val>1?val/100:val)*s.click_count); } },
+  { key:'click_count',        label:'クリック数',       type:'count', fmt:'int',  issue:false },
+  { key:'ctr',                label:'クリック率（CTR）',type:'rate',  fmt:'pct',  issue:true,
+     calc: s => s.impression_count>0 ? s.click_count/s.impression_count : 0,
+     backCalc: (val,s,side) => { s.click_count = Math.round((val>1?val/100:val)*s.impression_count); } },
+  { key:'impression_count',   label:'表示回数',         type:'count', fmt:'int',  issue:true },
+  { key:'impression_per_job', label:'1求人あたり表示',  type:'rate',  fmt:'int',  issue:false,
+     calc: s => s.job_count>0 ? s.impression_count/s.job_count : 0,
+     backCalc: (val,s,side) => { s.impression_count = Math.round(val*s.job_count); } },
+  { key:'job_count',          label:'求人数',           type:'count', fmt:'int',  issue:false },
+  { key:'cost_per_job',       label:'1求人あたり広告費',type:'rate',  fmt:'yen',  issue:false,
+     calc: s => s.job_count>0 ? s.ad_spend/s.job_count : 0,
+     backCalc: (val,s,side) => { s.ad_spend = Math.round(val*s.job_count); } },
+  { key:'ad_spend',           label:'有料広告費',       type:'count', fmt:'yen',  issue:false },
+];
+
+// sectionState: 'weekly' or 'cumulative' のデータを取得
+function getState(section) { return D[section]; }
+
+// ============================================================
+// 編集可能セル
+// ============================================================
+function makeEditable(el, getRaw, onCommit) {
+  el.classList.add('editable');
+  el.addEventListener('click', e => {
+    e.stopPropagation();
+    if (el.querySelector('input')) return;
+    el.classList.add('is-editing');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = getRaw();
+    input.style.cssText = 'border:none;outline:none;background:transparent;text-align:center;font-size:inherit;font-family:inherit;font-weight:inherit;color:inherit;width:' + Math.max(el.offsetWidth-8, 60) + 'px;padding:0';
+    el.innerHTML = '';
+    el.appendChild(input);
+    input.focus(); input.select();
+    const commit = () => {
+      const raw = input.value.replace(/[¥,％%]/g,'');
+      const parsed = parseFloat(raw);
+      el.classList.remove('is-editing');
+      onCommit(isNaN(parsed) ? 0 : parsed);
+    };
+    input.addEventListener('blur', commit);
+    input.addEventListener('keydown', e => {
+      if(e.key==='Enter'){ e.preventDefault(); commit(); }
+      if(e.key==='Escape'){ el.classList.remove('is-editing'); renderAll(); }
+    });
+  });
+}
+
+// ============================================================
+// KPIテーブル描画
+// ============================================================
+function renderKpiTable(tbodyId, section) {
+  const tbody = document.getElementById(tbodyId);
+  tbody.innerHTML = '';
+  const state = D[section];
+
+  KPI.forEach(def => {
+    const tr = document.createElement('tr');
+
+    // ラベル（編集可能）
+    const tdLabel = document.createElement('td');
+    tdLabel.className = 'kpi-label' + (def.issue ? ' issue-label' : '');
+    tdLabel.contentEditable = 'true';
+    tdLabel.textContent = def.label;
+    tr.appendChild(tdLabel);
+
+    // ヘルパー: セルを描画してtdに追加
+    function makeKpiCell(side, tdClass) {
+      const td = document.createElement('td');
+      td.className = tdClass;
+      const span = document.createElement('span');
+
+      const isAutoRate = (def.type === 'rate');
+      if (isAutoRate) td.classList.add('auto-cell');
+
+      function getDisplayVal() {
+        if (isAutoRate) {
+          const v = def.calc(state[side]);
+          return fmt[def.fmt](v);
+        }
+        return fmt[def.fmt](state[side][def.key]);
+      }
+
+      function render() { span.textContent = getDisplayVal(); }
+      render();
+
+      // 全セル編集可能
+      makeEditable(span,
+        () => {
+          if (isAutoRate) {
+            const v = def.calc(state[side]);
+            // %形式で返す（%の逆算入力を自然にするため）
+            if (def.fmt==='pct') return (v<1?v*100:v).toFixed(2);
+            return Math.round(v);
+          }
+          return state[side][def.key];
+        },
+        (val) => {
+          if (isAutoRate) {
+            // 逆算: 率を編集したら対応件数を更新
+            def.backCalc(val, state[side]);
+          } else {
+            state[side][def.key] = val;
+          }
+          // 全テーブルを再描画（依存関係があるため）
+          renderKpiTable('weekly-tbody', 'weekly', 'period');
+          renderKpiTable('final-tbody',  'weekly', 'final');
+          renderFunnel();
+        }
+      );
+
+      td.appendChild(span);
+      tr.appendChild(td);
+    }
+
+    makeKpiCell('target', 'kpi-target');
+    makeKpiCell('actual', 'kpi-actual');
+
+    // 達成率セル（自動計算）
+    const tdAchieve = document.createElement('td');
+    function renderAchieve() {
+      let t = state.target ? state.target[def.key] : 0;
+      let a = state.actual ? state.actual[def.key] : 0;
+      // 率の場合は計算値を使う
+      if (def.type === 'rate') {
+        t = def.calc(state.target || {});
+        a = def.calc(state.actual || {});
+      } else {
+        t = state[def.key]?.target ?? (D[section][def.key]?.target ?? 0);
+        a = state[def.key]?.actual ?? (D[section][def.key]?.actual ?? 0);
+        t = D[section][def.key]?.target ?? 0;
+        a = D[section][def.key]?.actual ?? 0;
+        if (def.type === 'rate') {
+          t = def.calc({ hire_count: D[section].hire_count?.target??0, interview_count: D[section].interview_count?.target??0, qualified_count: D[section].qualified_count?.target??0, apply_count: D[section].apply_count?.target??0, click_count: D[section].click_count?.target??0, impression_count: D[section].impression_count?.target??0, job_count: D[section].job_count?.target??0, ad_spend: D[section].ad_spend?.target??0 });
+          a = def.calc({ hire_count: D[section].hire_count?.actual??0, interview_count: D[section].interview_count?.actual??0, qualified_count: D[section].qualified_count?.actual??0, apply_count: D[section].apply_count?.actual??0, click_count: D[section].click_count?.actual??0, impression_count: D[section].impression_count?.actual??0, job_count: D[section].job_count?.actual??0, ad_spend: D[section].ad_spend?.actual??0 });
+        }
+      }
+      tdAchieve.className = achieveClass(a, t);
+      tdAchieve.textContent = achieveStr(a, t);
+    }
+
+    // シンプルに達成率計算
+    function calcAchieve() {
+      const kd = D[section][def.key] || {};
+      let t = kd.target || 0;
+      let a = kd.actual || 0;
+      if (def.type === 'rate') {
+        // 対応するcountから計算
+        const ts = buildStateObj(section, 'target');
+        const as = buildStateObj(section, 'actual');
+        t = def.calc(ts);
+        a = def.calc(as);
+      }
+      tdAchieve.className = achieveClass(a, t);
+      tdAchieve.textContent = achieveStr(a, t);
+    }
+    calcAchieve();
+    tr.appendChild(tdAchieve);
+
+    tbody.appendChild(tr);
+  });
+}
+
+// sectionからfinal/target/actualの数値オブジェクトを作る
+function buildStateObj(section, side) {
+  const s = {};
+  KPI.filter(d=>d.type==='count').forEach(d => {
+    s[d.key] = D[section][d.key]?.[side] ?? 0;
+  });
+  return s;
+}
+
+// KPI再描画
+// mode='period' → 今期目標 | 現状 | 達成率(現状/今期目標)
+// mode='final'  → 最終目標 | 現状 | 達成率(現状/最終目標)
+function renderKpiTable(tbodyId, section, mode) {
+  mode = mode || 'period';
+  const tbody = document.getElementById(tbodyId);
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  const goalSide = (mode === 'final') ? 'final' : 'target';
+  const goalCls  = (mode === 'final') ? 'kpi-final' : 'kpi-target';
+
+  KPI.forEach(def => {
+    const tr = document.createElement('tr');
+
+    // ラベル（編集可能）
+    const tdLabel = document.createElement('td');
+    tdLabel.className = 'kpi-label' + (def.issue ? ' issue-label' : '');
+    tdLabel.contentEditable = 'true';
+    tdLabel.textContent = def.label;
+    tr.appendChild(tdLabel);
+
+    // 2列: goalSide / actual
+    [{ side: goalSide, cls: goalCls }, { side: 'actual', cls: 'kpi-actual' }].forEach(col => {
+      const td = document.createElement('td');
+      td.className = col.cls;
+      const isRate = (def.type==='rate');
+      if (isRate) td.classList.add('auto-cell');
+      const span = document.createElement('span');
+
+      function getVal() {
+        if (isRate) return def.calc(buildStateObj(section, col.side));
+        return D[section][def.key]?.[col.side] ?? 0;
+      }
+      function render() { span.textContent = fmt[def.fmt](getVal()); }
+      render();
+
+      makeEditable(span,
+        () => {
+          const v = getVal();
+          return def.fmt==='pct' ? (v<1?v*100:v).toFixed(2) : (v > 0 && v < 1 ? v.toFixed(1) : Math.round(v));
+        },
+        val => {
+          if (isRate) {
+            const s = buildStateObj(section, col.side);
+            def.backCalc(val, s);
+            KPI.filter(d=>d.type==='count').forEach(d => {
+              if (D[section][d.key]) D[section][d.key][col.side] = s[d.key];
+            });
+          } else {
+            if (!D[section][def.key]) D[section][def.key] = {};
+            D[section][def.key][col.side] = val;
+          }
+          renderKpiTable('weekly-tbody', 'weekly', 'period');
+          renderKpiTable('final-tbody',  'weekly', 'final');
+          renderFunnel();
+        }
+      );
+      td.appendChild(span);
+      tr.appendChild(td);
+    });
+
+    // 達成率（現状 vs goalSide）
+    const tdAch = document.createElement('td');
+    const g = buildStateObj(section, goalSide);
+    const a = buildStateObj(section, 'actual');
+    let gVal = def.type==='rate' ? def.calc(g) : (D[section][def.key]?.[goalSide]??0);
+    let aVal = def.type==='rate' ? def.calc(a) : (D[section][def.key]?.actual??0);
+    tdAch.className = achieveClass(aVal, gVal);
+    tdAch.textContent = achieveStr(aVal, gVal);
+    tr.appendChild(tdAch);
+
+    tbody.appendChild(tr);
+  });
+}
+
+// ============================================================
+// 分析カード（直接編集テキスト）
+// ============================================================
+// <<<RPO_ANALYSES_START>>>
+const analyses = [{"no":1,"icon":"👁","title":"表示回数","category":"定量","issue":"期間中の表示回数は2,460回（Airワーク1,784回・Indeed676回）。【正社員】イベント会場でのPR・案内コン、【正社員】物流業界の採用コンサルタント（等は応募0件となっており、検索露出の改善が必要な状況です。","action":"応募0の求人（【正社員】イベント会場でのPR・案内コン、【正社員】物流業界の採用コンサルタント（等）について、タイトルへの「未経験歓迎」「リモート可」等のキーワード追加と、掲載先媒体の見直しを優先的に実施することを推奨します。"},{"no":3,"icon":"📝","title":"応募率","category":"定量","issue":"全体応募率は11.3%（応募30件/クリック266件）。「一般事務・経理・人事サポート」が12件と最多ですが、4求人で応募0件が続いています。","action":"応募0が続く4求人を優先的に改善します。求人詳細ページの入力項目削減・仕事内容の具体化・応募ハードルを下げる訴求文に見直すことを推奨します。"},{"no":4,"icon":"✅","title":"有効応募率","category":"定性","issue":"今期の応募30件のうち、有効応募数はATS・選考データから別途確認が必要です（このレポートで入力してください）。媒体別ではAirワーク13件・Indeed17件の内訳です。","action":"有効応募率の向上には、Indeed求人へのスクリーニング質問の追加と、必須条件の明記が有効です。また応募フォームに簡易アンケートを設置し、応募動機の質を事前確認することも推奨します。"},{"no":5,"icon":"📋","title":"求人票品質","category":"定性","issue":"媒体別応募はAirワーク13件・Indeed17件。応募0の求人が4件あり、求人票の内容（仕事内容・訴求文・画像）が十分に整備されていない可能性があります。","action":"応募0求人を対象に、①給与・勤務地・待遇の具体的な数字記載、②仕事の「やりがい」「チームの雰囲気」を盛り込んだ訴求文への改訂、③写真・動画の追加を優先的に実施します。"}];
+// <<<RPO_ANALYSES_END>>>
+
+// UID管理 — カード追加・削除に対応
+let _uidCounter = 0;
+analyses.forEach(a => { if (!a._uid) a._uid = ++_uidCounter; });
+
+function makeAnalysisCard(a) {
+  const catClass = a.category === '定量' ? 'quant' : 'qual';
+  const catLabel = a.category === '定量' ? '定性へ' : '定量へ';
+  return `
+    <div class="analysis-card" data-uid="${a._uid}">
+      <div class="analysis-card-header">
+        <span class="analysis-icon" contenteditable="true" data-uid="${a._uid}" data-field="icon">${a.icon}</span>
+        <span class="analysis-title" contenteditable="true" data-uid="${a._uid}" data-field="title">${a.title}</span>
+        <button class="cat-toggle-btn ${catClass}" onclick="toggleCategory(${a._uid})" title="カテゴリを切替">${catLabel}</button>
+        <button class="delete-card-btn" onclick="deleteCard(${a._uid})" title="この項目を削除">✕</button>
+      </div>
+      <div class="analysis-body">
+        <div class="analysis-issue">
+          <div class="badge badge-issue">📍 課題</div>
+          <textarea class="text-editable" rows="3" data-uid="${a._uid}" data-field="issue">${a.issue}</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+        <div class="analysis-action">
+          <div class="badge badge-action">💡 打ち手</div>
+          <textarea class="text-editable" rows="3" data-uid="${a._uid}" data-field="action">${a.action}</textarea>
+          <div class="edit-hint">✏️ クリックして編集</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function deleteCard(uid) {
+  const idx = analyses.findIndex(a => a._uid === uid);
+  if (idx !== -1) analyses.splice(idx, 1);
+  renderAnalyses();
+}
+
+function toggleCategory(uid) {
+  const a = analyses.find(a => a._uid === uid);
+  if (!a) return;
+  a.category = a.category === '定量' ? '定性' : '定量';
+  a.icon = a.category === '定量' ? '📊' : '💬';
+  renderAnalyses();
+}
+
+function addCard(category) {
+  const uid = ++_uidCounter;
+  analyses.push({
+    _uid: uid,
+    category: category,
+    no: analyses.length + 1,
+    icon: category === '定量' ? '📊' : '💬',
+    title: '新しい分析項目',
+    issue: 'ここに課題を入力',
+    action: 'ここに打ち手を入力'
+  });
+  renderAnalyses();
+  // 追加されたカードまでスクロール
+  const newCard = document.querySelector(`[data-uid="${uid}"]`);
+  if (newCard) newCard.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function renderAnalyses() {
+  const container = document.getElementById('analysis-grid');
+  const quant = analyses.filter(a => a.category === '定量');
+  const qual  = analyses.filter(a => a.category === '定性');
+
+  let html = '';
+  html += `<div class="analysis-category">
+    <div class="analysis-category-header category-quant" contenteditable="true">📊 定量課題</div>
+    <div class="analysis-grid" id="quant-grid">${quant.map(makeAnalysisCard).join('')}</div>
+    <button class="add-card-btn" onclick="addCard('定量')">＋ 定量項目を追加</button>
+  </div>`;
+  html += `<div class="analysis-category" style="margin-top:20px">
+    <div class="analysis-category-header category-qual" contenteditable="true">💬 定性課題</div>
+    <div class="analysis-grid" id="qual-grid">${qual.map(makeAnalysisCard).join('')}</div>
+    <button class="add-card-btn" onclick="addCard('定性')">＋ 定性項目を追加</button>
+  </div>`;
+  container.innerHTML = html;
+
+  // contenteditable（アイコン・タイトル）の変更を analyses に反映
+  container.querySelectorAll('[contenteditable][data-uid]').forEach(el => {
+    el.addEventListener('input', () => {
+      const uid = parseInt(el.dataset.uid);
+      const a = analyses.find(x => x._uid === uid);
+      if (a) a[el.dataset.field] = el.textContent.trim();
+    });
+  });
+
+  // textarea の変更を analyses に反映
+  container.querySelectorAll('.text-editable').forEach(el => {
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+    el.addEventListener('input', () => {
+      el.style.height = 'auto';
+      el.style.height = el.scrollHeight + 'px';
+      const uid = parseInt(el.dataset.uid);
+      const a = analyses.find(x => x._uid === uid);
+      if (a) a[el.dataset.field] = el.value;
+    });
+    el.addEventListener('focus', () => { el.nextElementSibling.style.display = 'none'; });
+    el.addEventListener('blur',  () => { el.nextElementSibling.style.display = 'flex'; });
+  });
+}
+
+// ============================================================
+// 求人別
+// ============================================================
+function renderJobs() {
+  const tbody = document.getElementById('jobs-tbody');
+  tbody.innerHTML = '';
+  D.jobs.forEach((job, i) => {
+    const tr = document.createElement('tr');
+    const counts = ['impressions','clicks','applications','qualified','interviews','hires'];
+
+    // タイトル（編集可能）
+    const tdTitle = document.createElement('td');
+    tdTitle.className = 'title-cell';
+    tdTitle.contentEditable = 'true';
+    tdTitle.textContent = job.title;
+    tdTitle.addEventListener('input', () => { job.title = tdTitle.textContent.trim(); });
+    tr.appendChild(tdTitle);
+
+    // 表示回数
+    appendCountCell(tr, job, 'impressions', 'int', () => { refreshJobCalcs(tr, job); });
+    // クリック数
+    appendCountCell(tr, job, 'clicks', 'int', () => { refreshJobCalcs(tr, job); });
+    // CTR (auto)
+    const tdCtr = document.createElement('td'); tdCtr.className = 'calc-cell auto-cell';
+    tr.appendChild(tdCtr);
+    // 応募数
+    appendCountCell(tr, job, 'applications', 'int', () => { refreshJobCalcs(tr, job); });
+    // 応募率 (auto)
+    const tdAr = document.createElement('td'); tdAr.className = 'calc-cell auto-cell';
+    tr.appendChild(tdAr);
+    // 有効応募
+    appendCountCell(tr, job, 'qualified', 'int', () => { renderFunnel(); });
+    // 面接
+    appendCountCell(tr, job, 'interviews', 'int', () => { renderFunnel(); });
+    // 採用
+    appendCountCell(tr, job, 'hires', 'int', () => { renderFunnel(); });
+
+    tbody.appendChild(tr);
+
+    function refreshJobCalcs(tr, job) {
+      const calcCells = tr.querySelectorAll('.calc-cell');
+      calcCells[0].textContent = fmt.pct(job.clicks>0 ? job.clicks/job.impressions : 0);
+      calcCells[1].textContent = fmt.pct(job.clicks>0 ? job.applications/job.clicks : 0);
+      renderFunnel();
+    }
+    refreshJobCalcs(tr, job);
+  });
+}
+
+function appendCountCell(tr, obj, key, fmtKey, onChange) {
+  const td = document.createElement('td');
+  const span = document.createElement('span');
+  span.textContent = fmt[fmtKey](obj[key]);
+  makeEditable(span, () => obj[key], val => { obj[key]=val; span.textContent=fmt[fmtKey](val); onChange(); renderAdSummary(); });
+  td.appendChild(span); tr.appendChild(td);
+}
+
+// ============================================================
+// 有料広告
+// ============================================================
+function renderAds() {
+  const tbody = document.getElementById('ads-tbody');
+  tbody.innerHTML = '';
+  D.ads.forEach(ad => {
+    const tr = document.createElement('tr');
+    const tdPlan = document.createElement('td'); tdPlan.className='title-cell'; tdPlan.contentEditable='true'; tdPlan.textContent=ad.plan; tdPlan.addEventListener('input',()=>{ad.plan=tdPlan.textContent.trim();renderAdSummary();}); tr.appendChild(tdPlan);
+    appendCountCell(tr, ad, 'cost',         'yen', () => { refreshAdCalcs(tr,ad); renderAdSummary(); });
+    appendCountCell(tr, ad, 'clicks',       'int', () => { refreshAdCalcs(tr,ad); renderAdSummary(); });
+    const tdCpc = document.createElement('td'); tdCpc.className='calc-cell auto-cell'; tr.appendChild(tdCpc);
+    appendCountCell(tr, ad, 'applications', 'int', () => { refreshAdCalcs(tr,ad); renderAdSummary(); });
+    const tdCpa = document.createElement('td'); tdCpa.className='calc-cell auto-cell'; tr.appendChild(tdCpa);
+    appendCountCell(tr, ad, 'hires',        'int', () => { refreshAdCalcs(tr,ad); renderAdSummary(); });
+    const tdHireCpa = document.createElement('td'); tdHireCpa.className='calc-cell auto-cell'; tr.appendChild(tdHireCpa);
+    tbody.appendChild(tr);
+
+    function refreshAdCalcs(tr, ad) {
+      const cc = tr.querySelectorAll('.calc-cell');
+      cc[0].textContent = fmt.yen(ad.clicks>0 ? ad.cost/ad.clicks : 0);
+      cc[1].textContent = fmt.yen(ad.applications>0 ? ad.cost/ad.applications : 0);
+      cc[2].textContent = fmt.yen(ad.hires>0 ? ad.cost/ad.hires : 0);
+    }
+    refreshAdCalcs(tr, ad);
+  });
+}
+
+function renderAdSummary() {
+  const tc=D.ads.reduce((s,a)=>s+a.cost,0);
+  const tk=D.ads.reduce((s,a)=>s+a.clicks,0);
+  const ta=D.ads.reduce((s,a)=>s+a.applications,0);
+  const th=D.ads.reduce((s,a)=>s+a.hires,0);
+  document.getElementById('ad-summary').innerHTML = `
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">総広告費</div><div class="ad-card-value">${fmt.yen(tc)}</div></div>
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">クリック単価</div><div class="ad-card-value">${fmt.yen(tk>0?tc/tk:0)}</div></div>
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">応募単価</div><div class="ad-card-value">${fmt.yen(ta>0?tc/ta:0)}</div></div>
+    <div class="ad-card"><div class="ad-card-label" contenteditable="true">採用単価</div><div class="ad-card-value">${fmt.yen(th>0?tc/th:0)}</div></div>
+  `;
+}
+
+// ============================================================
+// ファネル
+// ============================================================
+function renderFunnel() {
+  const c = D.cumulative;
+  const g = k => c[k]?.actual ?? 0;
+  const imp=g('impression_count'), clk=g('click_count'), app=g('apply_count');
+  const qua=g('qualified_count'), itv=g('interview_count'), hir=g('hire_count');
+  const colors=['#1A2B4A','#1E3A5F','#2E5FA3','#6B8DC4','#9DB5D8','#C0392B'];
+  const steps=[
+    ['表示回数',imp,null],
+    ['クリック',clk,clk&&imp?'CTR '+fmt.pct(clk/imp):null],
+    ['応募',app,app&&clk?'応募率 '+fmt.pct(app/clk):null],
+    ['有効応募',qua,qua&&app?'有効率 '+fmt.pct(qua/app):null],
+    ['面接',itv,itv&&qua?'面接率 '+fmt.pct(itv/qua):null],
+    ['採用',hir,hir&&itv?'採用率 '+fmt.pct(hir/itv):null],
+  ];
+  document.getElementById('funnel-container').innerHTML = steps.map(([label,val,sub],i)=>`
+    <div class="funnel-step">
+      <div class="funnel-bar" style="background:${colors[i]}"></div>
+      <div class="funnel-val">${fmt.int(val)}</div>
+      <div class="funnel-label" contenteditable="true">${label}</div>
+      ${sub?`<div class="funnel-sub" contenteditable="true">${sub}</div>`:''}
+    </div>
+    ${i<5?'<span class="funnel-arrow" contenteditable="true">→</span>':''}
+  `).join('');
+}
+
+// ============================================================
+// 週次推移テーブル
+// ============================================================
+function renderHistory() {
+  const el = document.getElementById('weekly-history');
+  if (!el) return;
+  if (!D.history || D.history.length === 0) {
+    el.innerHTML = '<p style="color:#9CA3AF;font-size:13px">まだ週次データがありません。毎週レポートを生成すると自動的に蓄積されます。</p>';
+    return;
+  }
+  const cols = ['期間','表示回数','クリック','CTR','応募数','応募率','有効応募','面接','採用','広告費'];
+  let html = `<table class="data-table"><thead><tr>${cols.map(c=>`<th contenteditable="true">${c}</th>`).join('')}</tr></thead><tbody>`;
+  D.history.forEach(w => {
+    const ctr     = w.click_count > 0 ? w.click_count / w.impression_count : 0;
+    const appRate = w.click_count > 0 ? w.apply_count / w.click_count : 0;
+    html += `<tr>
+      <td class="title-cell" contenteditable="true">${w.week_start}〜${w.week_end}</td>
+      <td>${fmt.int(w.impression_count)}</td>
+      <td>${fmt.int(w.click_count)}</td>
+      <td>${fmt.pct(ctr)}</td>
+      <td>${fmt.int(w.apply_count)}</td>
+      <td>${fmt.pct(appRate)}</td>
+      <td>${fmt.int(w.qualified_count)}</td>
+      <td>${fmt.int(w.interview_count)}</td>
+      <td>${fmt.int(w.hire_count)}</td>
+      <td>${fmt.yen(w.ad_spend)}</td>
+    </tr>`;
+  });
+  // 累計行
+  const sum = key => D.history.reduce((s,w) => s + (w[key]||0), 0);
+  const ti = sum('impression_count'), tc = sum('click_count'), ta = sum('apply_count');
+  html += `<tr style="font-weight:700;background:#F0F4FF">
+    <td>累計</td>
+    <td>${fmt.int(ti)}</td>
+    <td>${fmt.int(tc)}</td>
+    <td>${fmt.pct(tc>0?tc/ti:0)}</td>
+    <td>${fmt.int(ta)}</td>
+    <td>${fmt.pct(tc>0?ta/tc:0)}</td>
+    <td>${fmt.int(sum('qualified_count'))}</td>
+    <td>${fmt.int(sum('interview_count'))}</td>
+    <td>${fmt.int(sum('hire_count'))}</td>
+    <td>${fmt.yen(sum('ad_spend'))}</td>
+  </tr>`;
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+// ============================================================
+// 初期描画
+// ============================================================
+function renderAll() {
+  renderKpiTable('weekly-tbody', 'weekly', 'period');
+  renderKpiTable('final-tbody',  'weekly', 'final');
+  renderJobs();
+  renderAds();
+  renderAdSummary();
+  renderFunnel();
+  renderAnalyses();
+  renderHistory();
+}
+
+renderAll();
+
+// ============================================================
+// ============================================================
+// 現在の状態を HTML として保存（先方共有用）
+// ============================================================
+function saveAsHtml() {
+  // 現在のDOM（contenteditable の編集済みテキスト含む）を取得
+  let html = document.documentElement.outerHTML;
+
+  // D（KPI数値）と analyses（分析テキスト）を現在の値で置換
+  const dJson      = JSON.stringify(D, null, 2);
+  // _uid は実行時のみ使う内部キー — 保存時は除外して再付番できるようにする
+  const aClean     = analyses.map(a => { const {_uid, ...rest} = a; return rest; });
+  const aJson      = JSON.stringify(aClean);
+
+  // データマーカー間を差し替え
+  html = html.replace(
+    /\/\/ <<<RPO_DATA_START>>>[\s\S]*?\/\/ <<<RPO_DATA_END>>>/,
+    `// <<<RPO_DATA_START>>>
+const D = ${dJson};
+// <<<RPO_DATA_END>>>`
+  );
+  html = html.replace(
+    /\/\/ <<<RPO_ANALYSES_START>>>[\s\S]*?\/\/ <<<RPO_ANALYSES_END>>>/,
+    `// <<<RPO_ANALYSES_START>>>
+const analyses = ${aJson};
+// <<<RPO_ANALYSES_END>>>`
+  );
+
+  // ファイル名
+  const today = new Date();
+  const ds = today.getFullYear() + ('0'+(today.getMonth()+1)).slice(-2) + ('0'+today.getDate()).slice(-2);
+  const client = document.querySelector('.header-client')?.textContent?.replace('様','').trim() || 'RPO';
+  const fileName = `RPO採用レポート_${client}_${ds}.html`;
+
+  // ダウンロード
+  const blob = new Blob([html], {type: 'text/html;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}
+
+// ============================================================
+// Excel エクスポート（SheetJS）
+// ============================================================
+
+// セルにコンマ書式を適用するヘルパー
+function applyColFmt(ws, totalRows, colFmts) {
+  // colFmts: 列インデックス→書式文字列のオブジェクト  例: {1:'#,##0', 4:'0.0%'}
+  for (let r = 1; r < totalRows; r++) {   // r=0はヘッダー行のためスキップ
+    Object.entries(colFmts).forEach(([c, z]) => {
+      const ref = XLSX.utils.encode_cell({r, c: parseInt(c)});
+      if (ws[ref] && ws[ref].t === 'n') ws[ref].z = z;
+    });
+  }
+}
+
+function exportToExcel() {
+  const wb = XLSX.utils.book_new();
+
+  // ── ヘルパー ──────────────────────────────────────────────
+  function getRawVal(def, side) {
+    const isRate = def.type === 'rate';
+    const v = isRate ? def.calc(buildStateObj('weekly', side)) : (D.weekly[def.key]?.[side] ?? 0);
+    if (def.fmt === 'pct') return parseFloat((v < 1 ? v : v / 100).toFixed(4)); // 0〜1の小数で格納
+    return Math.round(v);
+  }
+  function fmtLabel(def) { return def.label; }
+  function kpiColFmt(colIdx, def) {
+    if (def.fmt === 'pct') return '0.0%';
+    if (def.fmt === 'yen') return '¥#,##0';
+    return '#,##0';
+  }
+
+  // ── Sheet1: 週次KPI ───────────────────────────────────────
+  const kpiHeader = ['指標', '最終目標', '今期目標', '現状', '達成率'];
+  const kpiRows = KPI.map(def => {
+    const fv = getRawVal(def,'final'), tv = getRawVal(def,'target'), av = getRawVal(def,'actual');
+    const ach = tv > 0 ? av / tv : '';
+    return [fmtLabel(def), fv, tv, av, ach];
+  });
+  const ws1 = XLSX.utils.aoa_to_sheet([kpiHeader, ...kpiRows]);
+  ws1['!cols'] = [{wch:24},{wch:12},{wch:12},{wch:12},{wch:10}];
+  // 各行に書式適用
+  KPI.forEach((def, ri) => {
+    const r = ri + 1;
+    [1,2,3].forEach(c => {
+      const ref = XLSX.utils.encode_cell({r, c});
+      if (ws1[ref]) ws1[ref].z = kpiColFmt(c, def);
+    });
+    const achRef = XLSX.utils.encode_cell({r, c:4});
+    if (ws1[achRef] && ws1[achRef].t === 'n') ws1[achRef].z = '0%';
+  });
+  XLSX.utils.book_append_sheet(wb, ws1, '週次KPI');
+
+  // ── Sheet2: 3ヶ月最終目標 ────────────────────────────────
+  const fHeader = ['指標', '最終目標', '現状', '達成率'];
+  const fRows = KPI.map(def => {
+    const fv = getRawVal(def,'final'), av = getRawVal(def,'actual');
+    const ach = fv > 0 ? av / fv : '';
+    return [fmtLabel(def), fv, av, ach];
+  });
+  const ws2 = XLSX.utils.aoa_to_sheet([fHeader, ...fRows]);
+  ws2['!cols'] = [{wch:24},{wch:12},{wch:12},{wch:10}];
+  KPI.forEach((def, ri) => {
+    const r = ri + 1;
+    [1,2].forEach(c => {
+      const ref = XLSX.utils.encode_cell({r, c});
+      if (ws2[ref]) ws2[ref].z = kpiColFmt(c, def);
+    });
+    const achRef = XLSX.utils.encode_cell({r, c:3});
+    if (ws2[achRef] && ws2[achRef].t === 'n') ws2[achRef].z = '0%';
+  });
+  XLSX.utils.book_append_sheet(wb, ws2, '3ヶ月最終目標');
+
+  // ── Sheet3: 求人別パフォーマンス ─────────────────────────
+  const jobHeader = ['求人タイトル','媒体','表示回数','クリック数','CTR','応募数','応募率','有効応募','面接','採用'];
+  const jobRows = D.jobs.map(j => [
+    j.title, j.media, j.impressions, j.clicks,
+    j.impressions>0 ? j.clicks/j.impressions : 0,
+    j.applications,
+    j.clicks>0 ? j.applications/j.clicks : 0,
+    j.qualified, j.interviews, j.hires
+  ]);
+  const ws3 = XLSX.utils.aoa_to_sheet([jobHeader, ...jobRows]);
+  ws3['!cols'] = [{wch:28},{wch:10},{wch:10},{wch:10},{wch:8},{wch:8},{wch:8},{wch:8},{wch:6},{wch:6}];
+  applyColFmt(ws3, jobRows.length+1, {2:'#,##0', 3:'#,##0', 4:'0.0%', 5:'#,##0', 6:'0.0%', 7:'#,##0', 8:'#,##0', 9:'#,##0'});
+  XLSX.utils.book_append_sheet(wb, ws3, '求人別');
+
+  // ── Sheet4: 有料広告 ──────────────────────────────────────
+  const adHeader = ['広告プラン','費用','クリック','CPC','応募数','CPA','採用数','採用CPA'];
+  const adRows = D.ads.map(a => [
+    a.plan, Math.round(a.cost), a.clicks,
+    a.clicks>0 ? Math.round(a.cost/a.clicks) : 0,
+    a.applications,
+    a.applications>0 ? Math.round(a.cost/a.applications) : 0,
+    a.hires,
+    a.hires>0 ? Math.round(a.cost/a.hires) : 0
+  ]);
+  const ws4 = XLSX.utils.aoa_to_sheet([adHeader, ...adRows]);
+  ws4['!cols'] = [{wch:14},{wch:12},{wch:10},{wch:10},{wch:8},{wch:10},{wch:8},{wch:12}];
+  applyColFmt(ws4, adRows.length+1, {1:'¥#,##0', 2:'#,##0', 3:'¥#,##0', 4:'#,##0', 5:'¥#,##0', 6:'#,##0', 7:'¥#,##0'});
+  XLSX.utils.book_append_sheet(wb, ws4, '有料広告');
+
+  // ── Sheet5: 分析 課題と打ち手 ────────────────────────────
+  const anHeader = ['区分','タイトル','課題','打ち手'];
+  const anRows = analyses.map(a => [a.category||'', a.title, a.issue, a.action]);
+  const ws5 = XLSX.utils.aoa_to_sheet([anHeader, ...anRows]);
+  ws5['!cols'] = [{wch:8},{wch:16},{wch:50},{wch:50}];
+  XLSX.utils.book_append_sheet(wb, ws5, '分析');
+
+  // ── ファイル名 ────────────────────────────────────────────
+  const today = new Date();
+  const dateStr = today.getFullYear() + ('0'+(today.getMonth()+1)).slice(-2) + ('0'+today.getDate()).slice(-2);
+  const fileName = `RPO採用レポート_${dateStr}.xlsx`;
+
+  XLSX.writeFile(wb, fileName);
+}
+</script>
+
+</body></html>
